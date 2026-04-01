@@ -1,35 +1,35 @@
 function getUsers(_start, _end) {
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('dummy.json', 'utf8'));
-  for (const user of data.users) {
-    // console.log(user.createdAt);
-    // console.log(`User ID: ${user.id}, Name: ${user.name}, Email: ${user.email}`);
-  }
+  // const fs = require('fs');
+  // const data = JSON.parse(fs.readFileSync('dummy.json', 'utf8'));
+  // for (const user of data.users) {
+  //   // console.log(user.createdAt);
+  //   // console.log(`User ID: ${user.id}, Name: ${user.name}, Email: ${user.email}`);
+  // }
 
-  const start = new Date(_start);
-  const end = new Date(_end);
+  // const start = new Date(_start);
+  // const end = new Date(_end);
 
-  const filtered = data.users.filter((user) => {
-    const userDate = new Date(user.createdAt);
-    return userDate >= start && userDate <= end;
-  });
+  // const filtered = data.users.filter((user) => {
+  //   const userDate = new Date(user.createdAt);
+  //   return userDate >= start && userDate <= end;
+  // });
 
-  const merged = Object.values(
-    filtered.reduce((acc, user) => {
-      if (!acc[user.visitorId]) {
-        acc[user.visitorId] = {
-          visitorId: user.visitorId,
-          actions: [],
-        };
-      }
+  // const merged = Object.values(
+  //   filtered.reduce((acc, user) => {
+  //     if (!acc[user.visitorId]) {
+  //       acc[user.visitorId] = {
+  //         visitorId: user.visitorId,
+  //         actions: [],
+  //       };
+  //     }
 
-      acc[user.visitorId].actions.push(...user.actions);
+  //     acc[user.visitorId].actions.push(...user.actions);
 
-      return acc;
-    }, {}),
-  );
+  //     return acc;
+  //   }, {}),
+  // );
 
-  return merged;
+  // return merged;
 }
 
 module.exports = { getUsers };
