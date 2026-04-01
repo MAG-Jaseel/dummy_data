@@ -32,6 +32,6 @@ function getUsers(_start, _end) {
   return merged;
 }
 
-module.exports = { getUsers };
+module.exports = {   };
 
 getUsers(`2026-03-25T10:38:13.000Z`, `2026-03-25T13:00:20.000Z`);
