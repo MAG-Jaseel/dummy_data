@@ -1,6 +1,4 @@
-const fs = require('fs');
-const data = JSON.parse(fs.readFileSync('./dummy.json', 'utf8'));
-
+const data = require("./data");
 
 function getUsers(_start, _end) {
   for (const user of data.users) {
