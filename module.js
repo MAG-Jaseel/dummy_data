@@ -19,6 +19,11 @@ function getUsers(_start, _end) {
       if (!acc[user.visitorId]) {
         acc[user.visitorId] = {
           visitorId: user.visitorId,
+          idSite: user.idSite,
+          idVisit: user.idVisit,
+          visitIp: user.visitIp,
+          updatedAt: user.updatedAt,
+          createdAt: user.createdAt,
           actions: [],
         };
       }
