@@ -1,4 +1,5 @@
 const express = require("express");
+const { getUsers } = require('./dummy');
 
 const app = express();
 app.use(express.json());
