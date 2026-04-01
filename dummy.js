@@ -1,6 +1,6 @@
 function getUsers(_start, _end) {
   const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./dummy.json', 'utf8'));
+  const data = JSON.parse(fs.readFileSync('dummy.json', 'utf8'));
   for (const user of data.users) {
     // console.log(user.createdAt);
     // console.log(`User ID: ${user.id}, Name: ${user.name}, Email: ${user.email}`);
